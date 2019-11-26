@@ -10,7 +10,9 @@ setuptools.setup(
     url="https://github.com/rdilweb/intutils",
     description="Basic integer manipulation library.",
     python_requires=">3.3",
-    classifiers=[
+    keywords=[
+        "int",
+        "integer",
         "utils",
         "util",
         "utilities"
