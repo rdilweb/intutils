@@ -11,7 +11,6 @@ setuptools.setup(
     description="Basic integer manipulation library.",
     python_requires=">3.3",
     classifiers=[
-        "int",
         "integer",
         "utils",
         "util",
