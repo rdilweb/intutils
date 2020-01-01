@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="intutils",
-    version="1.1.0",
+    version="1.2.0",
     author="Reece Dunham",
     author_email="me@rdil.rocks",
     license="MIT",
@@ -20,5 +20,8 @@ setuptools.setup(
         "utils",
         "util",
         "utilities"
-    ]
+    ],
+    package_data = {
+        'foopkg': ['py.typed'],
+    }
 )
