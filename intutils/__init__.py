@@ -6,7 +6,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 -----------
 
 See https://docs.rdil.rocks/libraries/intutils for more information.
-"""
+"""  # noqa
+
+
+from .vendor import sorting
 
 
 def divisible_by_no_decimals(number: int, divisor: int) -> bool:
@@ -21,7 +24,7 @@ def is_odd(number: int) -> bool:
     return not is_even(number)
 
 
-def is_int(testable: object) -> bool:
+def is_int(testable) -> bool:
     if type(testable) == int:
         return True
     elif type(testable) == str:
@@ -31,3 +34,7 @@ def is_int(testable: object) -> bool:
         except ValueError:
             return False
     return False
+
+
+def sort_greatest_to_least(mylist: list) -> list:
+    return list(reversed(sorting.quick_sort(mylist, 0, len(mylist) - 1)))

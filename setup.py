@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="intutils",
-    version="1.2.1",
+    version="2.0.0",
     author="Reece Dunham",
     author_email="me@rdil.rocks",
     license="MIT",
@@ -12,7 +12,7 @@ setuptools.setup(
     description="Basic integer manipulation library.",
     python_requires=">3.3",
     project_urls={
-        "Documentation": "https://docs.rdil.rocks/libraries/intutils"
+        "Documentation": "https://docs.rdil.rocks/libraries/intutils/"
     },
     keywords=[
         "int",
@@ -21,7 +21,10 @@ setuptools.setup(
         "util",
         "utilities"
     ],
-    package_data = {
+    package_data={
         'intutils': ['py.typed'],
-    }
+    },
+    zip_safe=False,
+    long_description=open("README.md", "r").read(),
+    long_description_content_type="text/markdown"
 )
