@@ -38,3 +38,23 @@ def is_int(testable) -> bool:
 
 def sort_greatest_to_least(mylist: list) -> list:
     return list(reversed(sorting.quick_sort(mylist, 0, len(mylist) - 1)))
+
+
+def days_in_month(month_number: int, year_int=0) -> int:
+    if month_number >= 13:
+        raise ValueError("There isn't a month with a number bigger then 12!!")
+
+    if is_even(month_number) and not month_number == 2:
+        # even month, not Febrary
+        return 30
+
+    if is_odd(month_number):
+        # odd month
+        return 31
+
+    if divisible_by_no_decimals(year_int, 4):
+        # leap year
+        return 29
+
+    # typical year
+    return 28
