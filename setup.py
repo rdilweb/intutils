@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="intutils",
-    version="2.1.0",
+    version="3.0.0",
     author="Reece Dunham",
     author_email="me@rdil.rocks",
     license="MIT",
