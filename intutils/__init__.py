@@ -1,12 +1,14 @@
-"""
-Copyright 2019-present Reece Dunham.
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
------------
+"""intutils is a basic Python integer manipulation library."""
 
-See https://docs.rdil.rocks/libraries/intutils for more information.
-"""  # noqa
+from typing import Any, List
+
+
+__author__ = "Reece Dunham"
+__license__ = "MIT"
+__all__ = [
+    "divisible_by_no_decimals", "is_even", "is_odd", "is_int",
+    "sort_greatest_to_least"
+]
 
 
 def divisible_by_no_decimals(number: int, divisor: int) -> bool:
@@ -50,7 +52,7 @@ def is_odd(number: int) -> bool:
     return not is_even(number)
 
 
-def is_int(testable) -> bool:
+def is_int(testable: Any) -> bool:
     """
     Returns if the passed item is an integer.
 
@@ -71,9 +73,9 @@ def is_int(testable) -> bool:
     return False
 
 
-def sort_greatest_to_least(mylist: list) -> list:
+def sort_greatest_to_least(mylist: List[int]) -> List[int]:
     """
-    Sorts the passed list from greatest to least.
+    Sorts the passed list of integers from greatest to least.
 
     Arguments:
         mylist: The list to sort.
@@ -83,7 +85,7 @@ def sort_greatest_to_least(mylist: list) -> list:
     """
     return list(
         reversed(
-            Sorting().quick_sort(mylist, 0, len(mylist) - 1)
+            _Sorting().quick_sort(mylist, 0, len(mylist) - 1)
         )
     )
 
@@ -118,7 +120,7 @@ def days_in_month(month_number: int, year_int=0) -> int:
     return 28
 
 
-class Sorting:
+class _Sorting:
     """
     Sorting Algorithms
 
@@ -128,7 +130,7 @@ class Sorting:
     GitHub: https://github.com/DahlitzFlorian/SortingAlgorithms
     """
 
-    def _swap(self, thelist: list, a, b):
+    def _swap(self, thelist: List[int], a: int, b: int) -> None:
         """
         Swaps two values of a given lists. Needs a pointer
         to the lists and the two positions of the values to swap.
@@ -142,7 +144,7 @@ class Sorting:
         thelist[a] = thelist[b]
         thelist[b] = tmp
 
-    def quick_sort(self, data: list, left: int, right: int) -> list:
+    def quick_sort(self, data: List[int], left: int, right: int) -> List[int]:
         """
         Quick Sort
 
